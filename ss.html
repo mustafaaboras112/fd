@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>قرية الهبيط - تعريف عصري وجذاب</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    :root {
+      --primary: #42a85f;
+      --secondary: #76c893;
+      --accent: #2d8a3e;
+      --bg: #e9f5db;
+      --text-color: #2c3a21;
+      --glass: rgba(255, 255, 255, 0.6);
+      --radius: 16px;
+      --shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+      --transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      --max-content-width: 1100px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Tajawal', sans-serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text-color);
+      min-height: 100vh;
+      overflow-x: hidden;
+      transition: background-color var(--transition), color var(--transition);
+    }
+
+    nav {
+      background-color: var(--primary);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      font-weight: 700;
+      color: white;
+    }
+    nav .logo {
+      font-size: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    nav .logo i {
+      font-size: 2rem;
+      color: var(--secondary);
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.4rem 1rem;
+      border-radius: 10px;
+      transition: background-color 0.3s ease;
+    }
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: var(--secondary);
+      outline-offset: 3px;
+      outline: 3px solid var(--accent);
+    }
+
+    header {
+      position: relative;
+      background: linear-gradient(135deg, var(--secondary), var(--primary));
+      color: white;
+      height: 80vh;
+      padding: 0 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: visible;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      margin: 2rem auto 4rem;
+      max-width: var(--max-content-width);
+    }
+    header::before, header::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      opacity: 0.3;
+      z-index: 0;
+    }
+    header::before {
+      background: #beefd4;
+      width: 250px;
+      height: 250px;
+      top: 20px;
+      left: 20px;
+    }
+    header::after {
+      background: #a1d995;
+      width: 220px;
+      height: 220px;
+      bottom: 30px;
+      right: 30px;
+      animation-delay: 4s;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 900;
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin-bottom: 0.5rem;
+      text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.15);
+    }
+    header p.subtitle {
+      font-size: 1.3rem;
+      max-width: 600px;
+      margin: 0 auto;
+      color: #e0f5d5c9;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    main {
+      max-width: var(--max-content-width);
+      margin: 3rem auto 6rem;
+      padding: 0 1rem;
+      color: var(--text-color);
+    }
+
+    h2.section-title {
+      font-size: 2.75rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: var(--accent);
+      border-bottom: 4px solid var(--primary);
+      padding-bottom: 0.3rem;
+      max-width: 360px;
+      margin-left: auto;
+      margin-right: auto;
+      background: rgba(255 255 255 / 0.7);
+      border-radius: 6px;
+      box-shadow: 0 0 10px var(--primary);
+    }
+
+    .content-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      justify-content: center;
+      align-items: center;
+    }
+    .content-text {
+      flex: 1 1 400px;
+      min-width: 280px;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+    .content-image {
+      flex: 1 1 400px;
+      max-width: 450px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .content-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: var(--radius);
+    }
+    .content-image:hover {
+      transform: scale(1.05);
+      box-shadow: 0 18px 60px rgba(0,0,0,0.24);
+    }
+
+    .timeline {
+      max-width: 900px;
+      margin: 3rem auto;
+      border-left: 4px solid var(--primary);
+      padding-left: 30px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+      padding-left: 20px;
+      color: var(--text-color);
+      font-weight: 500;
+      font-size: 1rem;
+    }
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -12px;
+      top: 10px;
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent);
+    }
+    .timeline-item .date {
+      font-weight: 700;
+      margin-bottom: 6px;
+      font-size: 1.1rem;
+      color: var(--primary);
+    }
+
+    .gallery {
+      background-color: rgba(193 245 172 / 0.85);
+      padding: 3rem 1rem;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+      color: var(--text-color);
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .gallery-item {
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.18);
+      position: relative;
+      height: 220px;
+      background: white;
+    }
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius);
+      transition: transform 0.3s ease;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.07);
+    }
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+      color: white;
+      padding: 10px 20px;
+      font-weight: 600;
+      font-size: 1rem;
+      border-radius: 0 0 var(--radius) var(--radius);
+      text-align: center;
+    }
+
+    .map-section {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      text-align: center;
+      padding: 3rem 1rem;
+      border-radius: var(--radius);
+      max-width: var(--max-content-width);
+      margin: 3rem auto 4rem;
+      box-shadow: 0 15px 50px rgba(66,216,146,0.6);
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .map-section img {
+      max-width: 100%;
+      border-radius: var(--radius);
+      margin: 1.7rem 0;
+      box-shadow: 0 5px 24px rgba(0,0,0,0.35);
+    }
+
+    .testimonials {
+      max-width: var(--max-content-width);
+      margin: 3rem auto 5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+      gap: 2.5rem;
+      color: var(--text-color);
+    }
+    .testimonial {
+      background:#fff;
+      border-radius: var(--radius);
+      padding: 2rem;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+      font-style: italic;
+      position: relative;
+      line-height: 1.7;
+    }
+    .testimonial::before {
+      content: '“';
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 3.5rem;
+      color: var(--accent);
+      opacity: 0.3;
+      font-weight: 900;
+      font-family: serif;
+    }
+    .testimonial-author {
+      margin-top: 1.5rem;
+      font-weight: 700;
+      font-style: normal;
+      color: var(--primary);
+      text-align: left;
+    }
+
+    #action {
+      background-color: var(--accent);
+      color: var(--light-bg);
+      text-align: center;
+      padding: 5rem 1rem;
+      border-radius: var(--radius);
+      max-width: var(--max-content-width);
+      margin: 4rem auto 6rem;
+      box-shadow: 0 15px 50px rgba(255,77,77,0.8);
+      font-weight: 700;
+    }
+    #action h2 {
+      font-size: 2.8rem;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 15px rgba(0,0,0,0.4);
+    }
+    #action p {
+      max-width: 720px;
+      margin: 0 auto 2rem;
+      line-height: 1.6;
+      font-size: 1.3rem;
+    }
+    #action a.download-btn {
+      display: inline-block;
+      background: var(--dark);
+      color: var(--light);
+      padding: 15px 40px;
+      border-radius: 50px;
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin: 0 1rem;
+      text-decoration: none;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.7);
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s;
+    }
+    #action a.download-btn:hover {
+      background-color: #000;
+      transform: translateY(-5px);
+    }
+    #action a.download-btn:focus {
+      outline: 3px solid var(--light);
+      outline-offset: 4px;
+    }
+
+    footer {
+      background-color: var(--primary);
+      color: white;
+      text-align: center;
+      font-weight: 700;
+      padding: 3rem 1rem;
+      font-size: 1rem;
+      box-shadow: inset 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Responsive */
+    @media (max-width: 992px){
+      header h1 {
+        font-size: 2.5rem;
+      }
+      header p.subtitle {
+        font-size: 1.1rem;
+        max-width: 280px;
+        margin: 0 auto;
+      }
+      .history-content {
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+      .history-image, .history-text {
+        max-width: 100%;
+      }
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      }
+      .testimonial {
+        font-size: 1rem;
+      }
+    }
+    @media (max-width: 480px){
+      header h1 {
+        font-size: 1.8rem;
+      }
+      h2.section-title {
+        font-size: 1.8rem;
+      }
+      #action h2 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-container">
+    <div class="logo" aria-label="شعار الموقع">
+      <i class="fas fa-map-location-dot" aria-hidden="true"></i> قرية الهبيط
+    </div>
+    <ul class="nav-links" role="navigation" aria-label="قائمة التنقل الرئيسية">
+      <li><a href="#about" tabindex="0">عن القرية</a></li>
+      <li><a href="#destruction" tabindex="0">الدمار</a></li>
+      <li><a href="#gallery" tabindex="0">معرض الصور</a></li>
+      <li><a href="#map" tabindex="0">الموقع</a></li>
+      <li><a href="#testimonials" tabindex="0">الشهادات</a></li>
+      <li><a href="#action" tabindex="0">كيف تساعد</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header>
+  <h1 class="header-title" aria-live="polite">مرحباً بكم في قرية الهبيط</h1>
+  <p class="subtitle">قصة صمود قرية تعاني وتمد العالم بشهادتها</p>
+</header>
+
+<main>
+  <section id="about" tabindex="0" aria-label="مقدمة عن قرية الهبيط">
+    <h2 class="section-title">عن قرية الهبيط</h2>
+    <div class="content-flex">
+      <div class="content-text">
+        <p>تقع الهبيط في أقصى ريف إدلب الجنوبي، كانت بلدة مزدهرة تعتمد على الزراعة والتجارة. تضم أكثر من 300 منزل ومدرستين ومسجدًا تاريخيًا ومستشفى صغيراً. عاش سكانها حياة مليئة بالترابط والتآزر.</p>
+        <p>مع بداية الأحداث السورية عام 2011، تعرضت للهجوم والدمار، وطُرد معظم سكانها، مع خسائر مادية وبشرية كبيرة.</p>
+        <p>اليوم، تحكي الهبيط قصصًا من الدمار والصمود، وتفتح أبوابها لكل من يرغب في التعرف عليها ودعم أهلها.</p>
+      </div>
+      <div class="content-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5X5WZYsyIn6FHRAfmA5JisZTOxn3aYpQ8Afu13qUeKqY-csCXxeiQuu0KLSNSDdGXoB8&amp;usqp=CAU" alt="صورة لقرية الهبيط قبل الدمار" />
+      </div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="date">2011</div>
+        <p>بداية الأزمة السورية وتأثيرها على الهبيط</p>
+      </div>
+      <div class="timeline-item">
+        <div class="date">2013</div>
+        <p>بدأ القصف والدمار على البلدة</p>
+      </div>
+      <div class="timeline-item">
+        <div class="date">2015</div>
+        <p>تدمير العديد من البنى التحتية والمرافق الحيوية</p>
+      </div>
+      <div class="timeline-item">
+        <div class="date">2017</div>
+        <p>نزوح كبير لسكان البلدة وانخفاض السكان إلى أدنى مستويات</p>
+      </div>
+      <div class="timeline-item">
+        <div class="date">2023</div>
+        <p>لا تزال آثار الدمار واضحة مع بداية جهود الإعمار</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="gallery" tabindex="0" aria-label="معرض صور الهبيط" class="gallery">
+    <h2>معرض الدمار</h2>
+    <div class="gallery-grid">
+      <div class="gallery-item" tabindex="0">
+        <img src="https://www.syria.tv/sites/default/files/2023-08/2%20%D8%A7%D9%84%D9%82%D8%B5%D9%81%20%D8%B9%D9%84%D9%89%20%D8%A8%D9%84%D8%AF%D8%A9%20%D8%A7%D9%84%D9%87%D8%A8%D9%8A%D8%B7%20%D8%A3%D8%AB%D9%86%D8%A7%D8%A1%20%D8%A7%D9%84%D8%AD%D9%85%D9%84%D8%A9%20%D8%A7%D9%84%D8%B9%D8%B3%D9%83%D8%B1%D9%8A%D8%A9%20%D9%84%D9%82%D9%88%D8%A7%D8%AA%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85%20%D9%81%D9%8A%20%D8%A7%D9%84%D8%B9%D8%A7%D9%85%202019.jpg" alt="منزل مدمر">
+        <div class="gallery-caption">منزل مدمر</div>
+      </div>
+      <div class="gallery-item" tabindex="0">
+        <img src="https://www.syria.tv/sites/default/files/2025-04/6028242034982242006.jpg" alt="أنقاض المسجد التاريخي">
+        <div class="gallery-caption">أنقاض المسجد التاريخي</div>
+      </div>
+      <div class="gallery-item" tabindex="0">
+        <img src="https://www.syria.tv/sites/default/files/2023-08/%D8%B4%D9%88%D8%A7%D8%B1%D8%B9%20%D8%A8%D9%84%D8%AF%D8%A9%20%D8%A7%D9%84%D9%87%D8%A8%D9%8A%D8%B7%20%D8%A8%D8%B9%D8%AF%20%D8%B3%D9%8A%D8%B7%D8%B1%D8%A9%20%D8%A7%D9%84%D9%86%D8%B8%D8%A7%D9%85.jpg" alt="شارع مدمر">
+        <div class="gallery-caption">شارع رئيسي بعد الدمار</div>
+      </div>
+      <div class="gallery-item" tabindex="0">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBg-npp3Wl6du5vpOHcukpXZiTcGhAYmMqWw&amp;s" alt="بيوت بلا سقوف">
+        <div class="gallery-caption">بيوت بلا سقوف</div>
+      </div>
+      <div class="gallery-item" tabindex="0">
+        <img src="https://www.syriahr.com/wp-content/uploads/2025/01/1657707596.jpg" alt="مخلفات الحرب الزراعية">
+        <div class="gallery-caption">مخلفات الحرب في الأراضي الزراعية</div>
+      </div>
+      <div class="gallery-item" tabindex="0">
+        <img src="https://horrya.net/wp-content/uploads/2018/09/41572327_167373407480609_2133653767407534080_o-copy.jpg" alt="بيوت مهجورة">
+        <div class="gallery-caption">بيوت مهجورة ومنهوبة</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="map" tabindex="0" aria-label="موقع قرية الهبيط" class="map-section">
+    <h2>موقع البلدة</h2>
+    <p>تقع الهبيط في أقصى ريف إدلب الجنوبي على بعد 12 كم من حدود محافظة حماة، تبعد 45 كم جنوب إدلب. كانت مركزاً زراعياً هاماً في المنطقة.</p>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXZt8BEDspi6ZZ_ANeJsgv1U7l7-WFPEjt5Q&amp;s" alt="خريطة موقع الهبيط" />
+    <p>بعد الحرب، أصبح الوصول إليها صعبًا بسبب مخلفات الحرب والاحتلال العسكري المنتشر.</p>
+  </section>
+
+  <section id="testimonials" tabindex="0">
+    <h2>شهادات أهل البلدة</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        <p>عشنا في الهبيط حياة جميلة، كنا نزرع أرضنا ونربي مواشينا. جاءت الحرب ودمرت كل شيء، لم يعد لدينا بيت ولا أرض ولا مستقبل. كل ما تبقى هو الذكريات المؤلمة.</p>
+        <p class="testimonial-author">- أبو محمد، 62 سنة</p>
+      </div>
+      <div class="testimonial">
+        <p>كنت أدرس في الصف السادس عندما دمرت مدرستنا. منذ ذلك اليوم لم أعد إلى المدرسة. الآن عمري 20 سنة وأنا لا أعرف القراءة والكتابة جيداً. الحرب سرقت مستقبلي.</p>
+        <p class="testimonial-author">- فاطمة، 20 سنة</p>
+      </div>
+      <div class="testimonial">
+        <p>عاد والدي إلى البلدة ليرى منزلنا بعد أن سمع أن الوضع هادئ. انفجر لغم تحت سيارته. مات في الحال. البلدة لم تعد آمنة أبداً، حتى لو توقفت الحرب.</p>
+        <p class="testimonial-author">- أحمد، 35 سنة</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="action" tabindex="0" style="background: var(--accent); color: var(--bg); text-align: center; padding: 5rem 1rem; border-radius: var(--radius); max-width: var(--max-content-width); margin: 4rem auto 6rem; box-shadow: 0 15px 50px rgba(255,77,77,0.8);">
+    <h2>الهبيط تستحق أن يعرف العالم معاناتها</h2>
+    <p>بلدتي تحتاج إلى صوت يصل إلى العالم. ساعدنا في نشر معاناة الهبيط ودمارها، وادعم قضيتنا بالتوثيق والنشر. معاً يمكننا إيصال صوت من لا صوت لهم.</p>
+    <a href="AlHebit_Full_Report.pdf" download="تقرير-شامل-عن-قرية-الهبيط.pdf" class="download-btn" style="background: var(--dark-bg); color: var(--bg); padding: 15px 40px; border-radius: 50px; font-weight: 900; font-size: 1.1rem; margin: 0 1rem; text-decoration: none; display: inline-block; box-shadow: 0 10px 35px rgba(0,0,0,0.7); cursor: pointer; border: none;">تحميل التقرير الكامل</a>
+  </section>
+</main>
+
+<footer>
+  © 2023 قرية الهبيط. كل الحقوق محفوظة.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+  const ctx = document.getElementById('destructionChart')?.getContext('2d');
+  if (ctx) {
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['المنازل', 'المدارس', 'المساجد', 'المرافق الصحية', 'الأراضي الزراعية', 'البنية التحتية'],
+        datasets: [{
+          label: 'نسبة الدمار %',
+          data: [95, 100, 100, 100, 85, 90],
+          backgroundColor: 'rgba(142, 0, 0, 0.7)',
+          borderColor: 'rgba(142, 0, 0, 1)',
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        scales: {
+          y: {
+            beginAtZero: true,
+            max: 100,
+            ticks: {
+              callback: value => value + '%'
+            },
+            title: { display: true, text: 'نسبة الدمار' }
+          }
+        },
+        plugins: {
+          legend: { display: false },
+          title: { display: true, text: 'نسب الدمار في مرافق الهبيط', font: { size: 18 } }
+        }
+      }
+    });
+  }
+</script>
+</body>
+</html>
